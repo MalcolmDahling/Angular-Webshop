@@ -5,7 +5,7 @@ import { Movie } from '../models/Movie';
 import { IMovieService } from '../models/IMovieService';
 
 @Injectable({
-     providedIn: 'root'
+    providedIn: 'root'
 })
 export class MovieService implements IMovieService{
 
@@ -19,7 +19,6 @@ export class MovieService implements IMovieService{
             .get<Movie[]>('https://medieinstitutet-wie-products.azurewebsites.net/api/products')
             .subscribe((data:Movie[]) => {
                 this.movies.next(data);
-                console.log(data)
             });
     }
 }

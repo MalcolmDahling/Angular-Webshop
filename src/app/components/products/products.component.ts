@@ -17,6 +17,7 @@ export class ProductsComponent implements OnInit {
         this.service.movies$.subscribe((data) => {
             this.movies = data;
         });
+        
         this.service.getData();
     }
 

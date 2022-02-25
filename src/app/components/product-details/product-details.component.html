@@ -1,1 +1,12 @@
-<p>product-details works!</p>
+<div class="wrapper">
+    <h2>{{movies[productIndex]?.name}}</h2>
+
+    <img src="{{movies[productIndex]?.imageUrl}}">
+    
+    <p>Description: {{movies[productIndex]?.description}}</p>
+    <p>Year of release: {{movies[productIndex]?.year}}</p>
+    <p>Price: {{movies[productIndex]?.price}} kr</p>
+    <p>Date added: {{movies[productIndex]?.added}}</p>
+    <p>Categories: <span *ngFor="let category of productCategories">{{category}} </span></p>
+</div>
+
