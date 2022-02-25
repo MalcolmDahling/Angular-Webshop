@@ -1,4 +1,6 @@
-export class IMovie{
+import { IProductCategory } from "./IProductCategory";
+
+export class Movie{
     constructor(
         public id:number,
         public name:string,
@@ -8,6 +10,6 @@ export class IMovie{
         public year:number,
         public added:string,
 
-        public productCategory:any[]
+        public productCategory:IProductCategory[]
     ){}
 }

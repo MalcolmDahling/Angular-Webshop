@@ -1,24 +1,28 @@
 import { Component, OnInit } from '@angular/core';
-import { IMovie } from 'src/app/models/IMovie';
+import { Movie } from 'src/app/models/Movie';
 import { MovieService } from 'src/app/services/movie.service';
 
 @Component({
-  selector: 'app-products',
-  templateUrl: './products.component.html',
-  styleUrls: ['./products.component.scss']
+    selector: 'app-products',
+    templateUrl: './products.component.html',
+    styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
 
-  constructor(private service:MovieService) { }
+    constructor(private service:MovieService) { }
 
-  movies:IMovie[] = [];
+    movies:Movie[] = [];
 
-  ngOnInit(): void {
-    this.service.movies$.subscribe((data) => {
-        this.movies = data;
-    });
-    this.service.getData();
-  }
+    ngOnInit(): void {
+        this.service.movies$.subscribe((data) => {
+            this.movies = data;
+        });
+        this.service.getData();
+    }
 
 }
 
+
+
+
+//{{product.productCategory[0].categoryId}}

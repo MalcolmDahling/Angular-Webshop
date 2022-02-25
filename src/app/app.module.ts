@@ -12,6 +12,7 @@ import { ProductDetailsComponent } from './components/product-details/product-de
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CategoriesComponent } from './components/categories/categories.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,9 +29,11 @@ import { CategoriesComponent } from './components/categories/categories.componen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
