@@ -1,0 +1,2 @@
+header{width:100%;background-color:#b6b6b6;padding:5px}header h1{text-align:center}header nav{width:-webkit-fit-content;width:-moz-fit-content;width:fit-content;margin:auto}header nav ul{list-style:none;display:-webkit-box;display:-ms-flexbox;display:flex;gap:20px;padding:0px}header nav ul li a{text-decoration:none;color:black}header nav ul li a:hover{background-color:rgba(0,0,0,0.2)}
+/*# sourceMappingURL=header.component.css.map */
