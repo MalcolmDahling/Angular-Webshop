@@ -29,7 +29,7 @@ export class ProductDetailsComponent implements OnInit {
 
             for(let i = 0; i < this.movies.length; i++){
 
-                if( this.movies[i].id == parseInt(this.router.url.slice(-2)) ){
+                if( this.movies[i].id == parseInt( String(this.router.url.split('/')[2]) ) ){
                     this.productIndex = i;
                     break;
                 }
