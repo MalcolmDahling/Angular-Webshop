@@ -1,1 +1,15 @@
-<p>cart works!</p>
+<div class="wrapper">
+    <h2>Items in cart</h2>
+
+    <div class="item" *ngFor="let product of moviesInCart;">
+        <a class="product"  href="productDetails/{{product.id}}">
+            {{product.name}} - {{product.price}} kr
+        </a>
+
+        <input type="button" value="Remove" (click)="removeFromCart(product.id)">
+    </div>
+
+
+    <input type="button" value="Place Order" (click)="placeOrder()">
+</div>
+
