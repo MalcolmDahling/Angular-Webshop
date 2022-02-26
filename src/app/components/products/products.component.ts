@@ -23,7 +23,3 @@ export class ProductsComponent implements OnInit {
 
 }
 
-
-
-
-//{{product.productCategory[0].categoryId}}

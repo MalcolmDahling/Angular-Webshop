@@ -69,16 +69,19 @@ export class ProductDetailsComponent implements OnInit {
         this.movieService.getData();
 
 
+    }
 
 
+    cart:any = [];
 
+    addToCart(){
+        if(localStorage.getItem('cart')){
+            this.cart = JSON.parse(localStorage.getItem('cart')!);
+        }
 
+        this.cart.push( parseInt( String(this.router.url.split('/')[2]) ) );
 
-
-
-
-
-
+        localStorage.setItem('cart', JSON.stringify(this.cart));
     }
 
 }
