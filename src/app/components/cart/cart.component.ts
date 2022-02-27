@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { IOrderRows } from 'src/app/models/IOrderRows';
 import { Movie } from 'src/app/models/Movie';
 import { Order } from 'src/app/models/Order';
 import { GetOrdersService } from 'src/app/services/get-orders.service';
@@ -22,7 +21,7 @@ export class CartComponent implements OnInit {
 
     orders:Order[] = [];
     orderId:number = 0;
-    orderRows:any = [];
+    orderRows:any[] = [];
 
     totalPrice:number = 0;
 
@@ -72,10 +71,12 @@ export class CartComponent implements OnInit {
             for(let i = 0; i < this.moviesInCart.length; i++){
 
                 if(this.orderRows.length > 0){
+
                     for(let j = 0; j < this.orderRows.length; j++){
 
                         if(this.moviesInCart[i].id == this.orderRows[j].productId){
-                            this.orderRows[j].amount += 1;
+
+                            this.orderRows[j].amount++;
                         }
 
                         else{
@@ -90,6 +91,7 @@ export class CartComponent implements OnInit {
                     }
                 }
 
+                
                 else{
                     this.orderRows.push({
                         id: 0, //VAD STÅR DETTA ID FÖR?
@@ -97,10 +99,12 @@ export class CartComponent implements OnInit {
                         product: this.moviesInCart[i].name,
                         amount: 1,
                         orderId: this.orderId
-                    });     
-                }
-
+                    });
+                }    
             }
+
+            
+
 
         });
 
@@ -139,5 +143,6 @@ export class CartComponent implements OnInit {
 
         console.log(this.checkoutForm.value)
     }
+
 
 }
