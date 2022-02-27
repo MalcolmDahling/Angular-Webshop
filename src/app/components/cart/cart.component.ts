@@ -81,7 +81,7 @@ export class CartComponent implements OnInit {
 
                         else{
                             this.orderRows.push({
-                                id: 0, //VAD STÅR DETTA ID FÖR?
+                                id: 0,
                                 productId: this.moviesInCart[i].id,
                                 product: this.moviesInCart[i].name,
                                 amount: 1,
@@ -94,7 +94,7 @@ export class CartComponent implements OnInit {
                 
                 else{
                     this.orderRows.push({
-                        id: 0, //VAD STÅR DETTA ID FÖR?
+                        id: 0,
                         productId: this.moviesInCart[i].id,
                         product: this.moviesInCart[i].name,
                         amount: 1,
