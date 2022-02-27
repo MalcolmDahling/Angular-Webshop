@@ -3,13 +3,27 @@
 
     <div class="item" *ngFor="let product of moviesInCart;">
         <a class="product"  href="productDetails/{{product.id}}">
-            {{product.name}} - {{product.price}} kr
-        </a>
+            {{product.name}} - {{product.price}} kr</a>
 
         <input type="button" value="Remove" (click)="removeFromCart(product.id)">
     </div>
 
 
-    <input type="button" value="Place Order" (click)="placeOrder()">
+
+    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+        <input type="text" formControlName="createdBy" placeholder="Name">
+
+        <select formControlName="paymentMethod" placeholder="Payment Method">
+            <option value="" disabled selected>Payment Method</option>
+            <option value="paypal">Paypal</option>
+            <option value="card">Card</option>
+            <option value="swish">Swish</option>
+        </select>
+
+        <p>Total price: {{totalPrice}} kr</p>
+
+        <input type="submit" value="Submit Order" [disabled]="!checkoutForm.valid">
+    </form>
+    
 </div>
 
