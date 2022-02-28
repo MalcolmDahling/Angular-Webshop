@@ -59,6 +59,8 @@ export class CartComponent implements OnInit {
     ordersFunc(){
         this.getOrderService.orders$.subscribe((data) => {
             this.orders = data;
+
+            console.log(this.moviesInCart)
             
 
             for(let i = 0; i < this.orders.length; i++){  
@@ -75,7 +77,7 @@ export class CartComponent implements OnInit {
                     for(let j = 0; j < this.orderRows.length; j++){
 
                         if(this.moviesInCart[i].id == this.orderRows[j].productId){
-
+                            
                             this.orderRows[j].amount++;
                         }
 
