@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Movie } from 'src/app/models/Movie';
 import { Order } from 'src/app/models/Order';
+import { IOrderRows } from 'src/app/models/IOrderRows';
 import { GetOrdersService } from 'src/app/services/get-orders.service';
 import { MovieService } from 'src/app/services/movie.service';
 
@@ -21,7 +22,7 @@ export class CartComponent implements OnInit {
 
     orders:Order[] = [];
     orderId:number = 0;
-    orderRows:any[] = [];
+    orderRows:IOrderRows[] = [];
 
     totalPrice:number = 0;
 
@@ -47,6 +48,7 @@ export class CartComponent implements OnInit {
                 }
 
             }
+
             this.ordersFunc();
         });
         
@@ -60,17 +62,17 @@ export class CartComponent implements OnInit {
         this.getOrderService.orders$.subscribe((data) => {
             this.orders = data;
 
-            console.log(this.moviesInCart)
-            
-
             for(let i = 0; i < this.orders.length; i++){  
                 if(this.orders[i].companyId == 9 && this.orders[i].id > this.orderId){
                     this.orderId = this.orders[i].id + 1;    
                 }
             }
+
+            
             
 
             for(let i = 0; i < this.moviesInCart.length; i++){
+                
 
                 if(this.orderRows.length > 0){
 
@@ -107,7 +109,7 @@ export class CartComponent implements OnInit {
 
             
 
-
+            console.log(this.orderRows)
         });
 
         this.getOrderService.getData();
