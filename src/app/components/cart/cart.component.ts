@@ -68,48 +68,85 @@ export class CartComponent implements OnInit {
                 }
             }
 
-            
-            
 
             for(let i = 0; i < this.moviesInCart.length; i++){
-                
-
-                if(this.orderRows.length > 0){
-
-                    for(let j = 0; j < this.orderRows.length; j++){
-
-                        if(this.moviesInCart[i].id == this.orderRows[j].productId){
-                            
-                            this.orderRows[j].amount++;
-                        }
-
-                        else{
-                            this.orderRows.push({
-                                id: 0,
-                                productId: this.moviesInCart[i].id,
-                                product: this.moviesInCart[i].name,
-                                amount: 1,
-                                orderId: this.orderId
-                            });
-                        }
-                    }
-                }
-
-                
-                else{
-                    this.orderRows.push({
-                        id: 0,
-                        productId: this.moviesInCart[i].id,
-                        product: this.moviesInCart[i].name,
-                        amount: 1,
-                        orderId: this.orderId
-                    });
-                }    
+                this.orderRows.push({
+                    id: 0,
+                    productId: this.moviesInCart[i].id,
+                    product: this.moviesInCart[i].name,
+                    amount: 1,
+                    orderId: this.orderId
+                });
             }
+            
+
+
+
+
+
+
+
+            // this.orderRows = this.orderRows.filter((value:any, index:number) => {
+
+            //     let _value = JSON.stringify(value);
+
+            //     return index === this.orderRows.findIndex(obj => {
+
+            //         return JSON.stringify(obj) === _value; 
+            //     });
+            // });
+            // console.log(this.orderRows)
 
             
 
-            console.log(this.orderRows)
+
+
+
+
+            
+
+            // for(let i = 0; i < this.moviesInCart.length; i++){
+                
+
+            //     if(this.orderRows.length > 0){
+
+            //         for(let j = 0; j < this.orderRows.length; j++){
+
+            //             if(this.moviesInCart[i].id == this.orderRows[j].productId){
+                            
+            //                 this.orderRows[j].amount++;
+            //             }
+
+            //             else{
+            //                 this.orderRows.push(
+            //                     {
+            //                         id: 0,
+            //                         productId: this.moviesInCart[i].id,
+            //                         product: this.moviesInCart[i].name,
+            //                         amount: 1,
+            //                         orderId: this.orderId
+            //                     }
+            //                 );
+            //             }
+            //         }
+            //     }
+
+                
+            //     else{
+            //         this.orderRows.push(
+            //             {
+            //                 id: 0,
+            //                 productId: this.moviesInCart[i].id,
+            //                 product: this.moviesInCart[i].name,
+            //                 amount: 1,
+            //                 orderId: this.orderId
+            //             }
+            //         );
+            //     }    
+            // }
+
+
+            console.log(this.orderRows);
         });
 
         this.getOrderService.getData();
