@@ -69,15 +69,15 @@ export class CartComponent implements OnInit {
             }
 
 
-            for(let i = 0; i < this.moviesInCart.length; i++){
-                this.orderRows.push({
-                    id: 0,
-                    productId: this.moviesInCart[i].id,
-                    product: this.moviesInCart[i].name,
-                    amount: 1,
-                    orderId: this.orderId
-                });
-            }
+            // for(let i = 0; i < this.moviesInCart.length; i++){
+            //     this.orderRows.push({
+            //         id: 0,
+            //         productId: this.moviesInCart[i].id,
+            //         product: this.moviesInCart[i].name,
+            //         amount: 1,
+            //         orderId: this.orderId
+            //     });
+            // }
             
 
 
@@ -105,45 +105,45 @@ export class CartComponent implements OnInit {
 
             
 
-            // for(let i = 0; i < this.moviesInCart.length; i++){
+            for(let i = 0; i < this.moviesInCart.length; i++){
                 
 
-            //     if(this.orderRows.length > 0){
+                if(this.orderRows.length > 0){
 
-            //         for(let j = 0; j < this.orderRows.length; j++){
+                    for(let j = 0; j < this.orderRows.length; j++){
 
-            //             if(this.moviesInCart[i].id == this.orderRows[j].productId){
+                        if(this.moviesInCart[i].id == this.orderRows[j].productId){
                             
-            //                 this.orderRows[j].amount++;
-            //             }
+                            this.orderRows[j].amount++;
+                        }
 
-            //             else{
-            //                 this.orderRows.push(
-            //                     {
-            //                         id: 0,
-            //                         productId: this.moviesInCart[i].id,
-            //                         product: this.moviesInCart[i].name,
-            //                         amount: 1,
-            //                         orderId: this.orderId
-            //                     }
-            //                 );
-            //             }
-            //         }
-            //     }
+                        else{
+                            this.orderRows.push(
+                                {
+                                    id: 0,
+                                    productId: this.moviesInCart[i].id,
+                                    product: this.moviesInCart[i].name,
+                                    amount: 1,
+                                    orderId: this.orderId
+                                }
+                            );
+                        }
+                    }
+                }
 
                 
-            //     else{
-            //         this.orderRows.push(
-            //             {
-            //                 id: 0,
-            //                 productId: this.moviesInCart[i].id,
-            //                 product: this.moviesInCart[i].name,
-            //                 amount: 1,
-            //                 orderId: this.orderId
-            //             }
-            //         );
-            //     }    
-            // }
+                else{
+                    this.orderRows.push(
+                        {
+                            id: 0,
+                            productId: this.moviesInCart[i].id,
+                            product: this.moviesInCart[i].name,
+                            amount: 1,
+                            orderId: this.orderId
+                        }
+                    );
+                }    
+            }
 
 
             console.log(this.orderRows);
