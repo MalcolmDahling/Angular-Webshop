@@ -17,7 +17,7 @@ export class CartComponent implements OnInit {
 
 
     movies:Movie[] = [];
-    cart:any = [];
+    cart:number[] = [];
     moviesInCart:Movie[] = [];
 
     orders:Order[] = [];
@@ -69,79 +69,36 @@ export class CartComponent implements OnInit {
             }
 
 
-            // for(let i = 0; i < this.moviesInCart.length; i++){
-            //     this.orderRows.push({
-            //         id: 0,
-            //         productId: this.moviesInCart[i].id,
-            //         product: this.moviesInCart[i].name,
-            //         amount: 1,
-            //         orderId: this.orderId
-            //     });
-            // }
-            
-
-
-
-
-
-
-
-            // this.orderRows = this.orderRows.filter((value:any, index:number) => {
-
-            //     let _value = JSON.stringify(value);
-
-            //     return index === this.orderRows.findIndex(obj => {
-
-            //         return JSON.stringify(obj) === _value; 
-            //     });
-            // });
-
-            
-
-
-
-
-
-            
-
             for(let i = 0; i < this.moviesInCart.length; i++){
-                
+                this.orderRows.push({
+                    id: 0,
+                    productId: this.moviesInCart[i].id,
+                    product: this.moviesInCart[i].name,
+                    amount: 1,
+                    orderId: this.orderId
+                });
+            }
+            
 
-                if(this.orderRows.length > 0){
+            this.orderRows = this.orderRows.filter((value:any, index:number) => {
+                let _value = JSON.stringify(value);
+                return index === this.orderRows.findIndex(obj => {
+                    return JSON.stringify(obj) === _value; 
+                });
+            });
 
-                    for(let j = 0; j < this.orderRows.length; j++){
+            
 
-                        if(this.moviesInCart[i].id == this.orderRows[j].productId){
-                            
-                            this.orderRows[j].amount++;
-                        }
+            let counts:any = {};
 
-                        else{
-                            this.orderRows.push(
-                                {
-                                    id: 0,
-                                    productId: this.moviesInCart[i].id,
-                                    product: this.moviesInCart[i].name,
-                                    amount: 1,
-                                    orderId: this.orderId
-                                }
-                            );
-                        }
-                    }
-                }
 
-                
-                else{
-                    this.orderRows.push(
-                        {
-                            id: 0,
-                            productId: this.moviesInCart[i].id,
-                            product: this.moviesInCart[i].name,
-                            amount: 1,
-                            orderId: this.orderId
-                        }
-                    );
-                }    
+            for (const num of this.cart) {
+            counts[num] = counts[num] ? counts[num] + 1 : 1;
+            }
+
+
+            for(let i = 0; i < this.orderRows.length; i++){
+                this.orderRows[i].amount = counts[this.orderRows[i].productId];
             }
 
 
