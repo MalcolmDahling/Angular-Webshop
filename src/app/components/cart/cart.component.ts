@@ -5,6 +5,7 @@ import { Order } from 'src/app/models/Order';
 import { IOrderRows } from 'src/app/models/IOrderRows';
 import { GetOrdersService } from 'src/app/services/get-orders.service';
 import { MovieService } from 'src/app/services/movie.service';
+import { SendOrderService } from 'src/app/services/send-order.service';
 
 @Component({
     selector: 'app-cart',
@@ -13,7 +14,7 @@ import { MovieService } from 'src/app/services/movie.service';
 })
 export class CartComponent implements OnInit {
 
-    constructor(private movieService:MovieService, private getOrderService:GetOrdersService, private fb:FormBuilder) { }
+    constructor(private movieService:MovieService, private getOrderService:GetOrdersService, private sendOrderService:SendOrderService, private fb:FormBuilder) { }
 
 
     movies:Movie[] = [];
@@ -73,7 +74,7 @@ export class CartComponent implements OnInit {
                 this.orderRows.push({
                     id: 0,
                     productId: this.moviesInCart[i].id,
-                    product: this.moviesInCart[i].name,
+                    product: null, //this.moviesInCart[i].name,
                     amount: 1,
                     orderId: this.orderId
                 });
@@ -128,7 +129,7 @@ export class CartComponent implements OnInit {
         createdBy: ['', Validators.required],
         paymentMethod: ['', Validators.required],
         totalPrice: [''],
-        status: [1],
+        status: [0],
         orderRows: ['']
 
     });
@@ -138,7 +139,7 @@ export class CartComponent implements OnInit {
         this.checkoutForm.controls['id'].setValue(this.orderId);
         this.checkoutForm.controls['orderRows'].setValue(this.orderRows);
 
-        console.log(this.checkoutForm.value)
+        this.sendOrderService.sendData(this.checkoutForm.value);
     }
 
 

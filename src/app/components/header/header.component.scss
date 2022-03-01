@@ -32,9 +32,13 @@ header{
                 }
 
                 a:hover{
-                    background-color:rgba(0, 0, 0, 0.200);
+                    background-color:rgba(0, 0, 0, 0.300);
                 }
             }
         }
+    }
+
+    .active{
+        background-color:rgba(0, 0, 0, 0.200);
     }
 }

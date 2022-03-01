@@ -1,0 +1,15 @@
+<div class="wrapper">
+    <h2>Search movies</h2>
+
+    <input type="text" placeholder="Search.." #searchString (keyup.enter)="search(searchString.value)">
+    <input type="button" Value="Search" (click)="search(searchString.value)">
+
+    <br>
+
+    <a class="product" *ngFor="let product of movies; let i = index" href="productDetails/{{product.id}}">
+        <h2 class="title">{{product.name}}</h2>
+        <img src="{{product.imageUrl}}">
+        <p class="year">{{product.year}}</p>
+        <p class="price">{{product.price}} kr</p>
+    </a>
+</div>

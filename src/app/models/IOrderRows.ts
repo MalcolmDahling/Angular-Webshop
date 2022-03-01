@@ -1,7 +1,7 @@
 export interface IOrderRows{
     id:number;
     productId:number;
-    product:string;
+    product:any;
     amount:number;
     orderId:number;
 }
