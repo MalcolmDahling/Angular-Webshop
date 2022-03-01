@@ -95,7 +95,6 @@ export class CartComponent implements OnInit {
             //         return JSON.stringify(obj) === _value; 
             //     });
             // });
-            // console.log(this.orderRows)
 
             
 
