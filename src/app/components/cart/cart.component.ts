@@ -64,7 +64,7 @@ export class CartComponent implements OnInit {
             this.orders = data;
 
             for(let i = 0; i < this.orders.length; i++){  
-                if(this.orders[i].companyId == 9 && this.orders[i].id > this.orderId){
+                if(this.orders[i].companyId == 1337 && this.orders[i].id > this.orderId){
                     this.orderId = this.orders[i].id + 1;    
                 }
             }
@@ -124,7 +124,7 @@ export class CartComponent implements OnInit {
 
     checkoutForm = this.fb.group({
         id:[''],
-        companyId:['9'],
+        companyId:['1337'],
         created:[new Date],
         createdBy: ['', Validators.required],
         paymentMethod: ['', Validators.required],
