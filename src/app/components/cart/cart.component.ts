@@ -74,7 +74,7 @@ export class CartComponent implements OnInit {
                 this.orderRows.push({
                     id: 0,
                     productId: this.moviesInCart[i].id,
-                    product: null, //this.moviesInCart[i].name,
+                    product: null,
                     amount: 1,
                     orderId: this.orderId
                 });

@@ -1,1 +1,25 @@
-<p>admin works!</p>
+<div class="wrapper">
+    <h2>Current orders</h2>
+
+    <div *ngFor="let order of orders">
+        <p>Order ID: {{order.id}}</p>
+        <p>Company ID: {{order.companyId}}</p>
+        <p>Created: {{order.created}}</p>
+        <p>Created by: {{order.createdBy}}</p>
+        <p>Payment method: {{order.paymentMethod}}</p>
+        <p>Total price: {{order.totalPrice}}</p>
+        <p>Status: {{order.status}}</p>
+
+        <div *ngFor="let row of order.orderRows">
+            <p>
+                ID: {{row.id}},
+                Product ID: {{row.productId}},
+                Product: {{row.product}},
+                Amount: {{row.amount}},
+                Order ID: {{row.orderId}}
+            </p>
+        </div>
+
+        <input type="button" value="Remove order" (click)="removeOrder(order.id)">
+    </div>
+</div>
