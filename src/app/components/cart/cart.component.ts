@@ -139,6 +139,10 @@ export class CartComponent implements OnInit {
         this.checkoutForm.controls['id'].setValue(this.orderId);
         this.checkoutForm.controls['orderRows'].setValue(this.orderRows);
 
+        //clear cart
+        this.cart = [];
+        localStorage.setItem('cart', JSON.stringify(this.cart));
+
         this.sendOrderService.sendData(this.checkoutForm.value);
     }
 

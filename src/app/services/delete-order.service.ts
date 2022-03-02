@@ -10,7 +10,7 @@ export class DeleteOrderService {
 
     deleteData(orderId:number){
         this.http
-            .delete('https://medieinstitutet-wie-products.azurewebsites.net/api/orders?companyId=1337')
+            .delete('https://medieinstitutet-wie-products.azurewebsites.net/api/orders/' + orderId)
             .subscribe(() => {});
     }
 }
