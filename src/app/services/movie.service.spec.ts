@@ -1,5 +1,5 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 
 import { MovieService } from './movie.service';
 
@@ -12,11 +12,11 @@ describe('MovieService', () => {
         })
         TestBed.configureTestingModule({});
         service = TestBed.inject(MovieService);
+
     });
 
     it('should be created', () => {
         expect(service).toBeTruthy();
     });
-
 
 });

@@ -5,19 +5,21 @@ import { TestBed } from '@angular/core/testing';
 import { SearchService } from './search.service';
 
 describe('SearchService', () => {
-  let service: SearchService;
+    let service: SearchService;
 
-  beforeEach(async () => {
+    beforeEach( () => {
 
-    await TestBed.configureTestingModule({
-        imports: [HttpClientTestingModule]
-    })
-    
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(SearchService);
-  });
+        TestBed.configureTestingModule({
+            imports: [HttpClientTestingModule]
+        })
+        
+        TestBed.configureTestingModule({});
+        service = TestBed.inject(SearchService);
+    });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
+    it('should be created', () => {
+        expect(service).toBeTruthy();
+    });
+
+
 });
