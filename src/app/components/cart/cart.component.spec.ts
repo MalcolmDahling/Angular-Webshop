@@ -27,4 +27,16 @@ describe('CartComponent', () => {
         expect(component).toBeTruthy();
     });
 
+
+
+    //ta bort window.location.reload() från cart.component.ts innan testet.
+    it('should test removing from cart', () => {
+        component.cart.push(76); //The Dark Knight ID
+
+        expect(component.cart.length).toBe(1);
+
+        component.removeFromCart(76);
+
+        expect(component.cart.length).toBe(0);
+    });
 });

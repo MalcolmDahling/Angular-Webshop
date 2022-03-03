@@ -9,7 +9,7 @@ import { CategoryService } from 'src/app/services/category.service';
 })
 export class CategoriesComponent implements OnInit {
 
-    constructor(private service:CategoryService) { }
+    constructor(public service:CategoryService) { }
 
     categories:ICategory[] = [];
 

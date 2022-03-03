@@ -117,7 +117,7 @@ export class CartComponent implements OnInit {
     removeFromCart(id:number){
         this.cart.splice( this.cart.indexOf(id), 1 );
         localStorage.setItem('cart', JSON.stringify(this.cart));
-        window.location.reload();
+        //window.location.reload();
     }
 
 
