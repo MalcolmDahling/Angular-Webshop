@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Movie } from 'src/app/models/Movie';
-import { Order } from 'src/app/models/Order';
 import { IOrderRows } from 'src/app/models/IOrderRows';
 import { GetOrdersService } from 'src/app/services/get-orders.service';
 import { MovieService } from 'src/app/services/movie.service';
 import { SendOrderService } from 'src/app/services/send-order.service';
+import { IOrder } from 'src/app/models/IOrder';
 
 @Component({
     selector: 'app-cart',
@@ -21,7 +21,7 @@ export class CartComponent implements OnInit {
     cart:number[] = [];
     moviesInCart:Movie[] = [];
 
-    orders:Order[] = [];
+    orders:IOrder[] = [];
     orderId:number = 0;
     orderRows:IOrderRows[] = [];
 

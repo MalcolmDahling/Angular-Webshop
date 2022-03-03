@@ -1,3 +1,5 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+
 import { TestBed } from '@angular/core/testing';
 
 import { CategoryService } from './category.service';
@@ -5,7 +7,10 @@ import { CategoryService } from './category.service';
 describe('CategoryService', () => {
   let service: CategoryService;
 
-  beforeEach(() => {
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+        imports: [HttpClientTestingModule]
+    })
     TestBed.configureTestingModule({});
     service = TestBed.inject(CategoryService);
   });

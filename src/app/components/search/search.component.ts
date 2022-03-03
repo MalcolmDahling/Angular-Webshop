@@ -21,7 +21,7 @@ export class SearchComponent implements OnInit {
         this.service.movies$.subscribe((data) => {
             this.movies = data;
 
-            console.log(data);
+            console.log(this.movies);
         });
         
         this.service.getData(searchString);   

@@ -1,7 +1,7 @@
 import { Subject } from "rxjs";
-import { Order } from "./Order";
+import { IOrder } from "./IOrder";
 
 export interface IOrderService{
-    orders:Subject<Order[]>;
+    orders:Subject<IOrder[]>;
     getData():void;
 }
