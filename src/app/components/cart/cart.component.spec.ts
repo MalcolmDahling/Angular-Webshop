@@ -28,8 +28,6 @@ describe('CartComponent', () => {
     });
 
 
-
-    //ta bort window.location.reload() från cart.component.ts innan testet.
     it('should test removing from cart', () => {
         component.cart.push(76); //The Dark Knight ID
 

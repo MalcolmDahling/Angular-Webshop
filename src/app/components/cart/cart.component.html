@@ -8,6 +8,8 @@
         <input type="button" value="Remove" (click)="removeFromCart(product.id)">
     </div>
 
+    <p *ngIf="moviesInCart.length == 0">Cart is empty.</p>
+
 
 
     <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">

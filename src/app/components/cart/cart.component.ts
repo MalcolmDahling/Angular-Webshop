@@ -117,7 +117,21 @@ export class CartComponent implements OnInit {
     removeFromCart(id:number){
         this.cart.splice( this.cart.indexOf(id), 1 );
         localStorage.setItem('cart', JSON.stringify(this.cart));
-        //window.location.reload();
+
+        this.moviesInCart = [];
+        this.totalPrice = 0;
+        
+        for(let i = 0; i < this.movies.length; i++){
+
+            for(let j = 0; j < this.cart.length; j++){
+
+                if(this.movies[i].id == this.cart[j]){
+                    
+                    this.moviesInCart.push(this.movies[i]);
+                    this.totalPrice += this.movies[i].price;
+                }
+            }
+        }
     }
 
 
@@ -144,6 +158,9 @@ export class CartComponent implements OnInit {
         localStorage.setItem('cart', JSON.stringify(this.cart));
 
         this.sendOrderService.sendData(this.checkoutForm.value);
+
+        this.moviesInCart = [];
+        this.totalPrice = 0;
     }
 
 
