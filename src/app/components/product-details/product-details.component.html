@@ -1,9 +1,10 @@
 <div class="wrapper">
     <h2>{{movies[productIndex]?.name}}</h2>
-    <input type="button" value="Add to cart" (click)="addToCart()">
 
     <img src="{{movies[productIndex]?.imageUrl}}">
-    
+
+    <input type="button" value="Add to cart" (click)="addToCart()">
+
     <p>Description: {{movies[productIndex]?.description}}</p>
     <p>Year of release: {{movies[productIndex]?.year}}</p>
     <p>Price: {{movies[productIndex]?.price}} kr</p>

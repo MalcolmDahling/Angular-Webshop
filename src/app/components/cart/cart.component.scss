@@ -27,6 +27,11 @@
         input{
             display:block;
             margin-bottom:10px;
+            width:170px;
+        }
+
+        input[type=submit]{
+            width:178px;
         }
     }
 }

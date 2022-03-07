@@ -12,6 +12,6 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  title = 'Welcome to the Movieshop!';
+  title = 'Welcome to Nätfliks!';
 
 }
