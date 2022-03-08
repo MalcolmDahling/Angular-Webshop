@@ -1,3 +1,5 @@
+GH Pages: https://malcolmdahling.github.io/Angular-Webshop/
+
 # AngularWebshop
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.4.
