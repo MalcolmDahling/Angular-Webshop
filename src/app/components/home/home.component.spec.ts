@@ -29,6 +29,6 @@ describe('HomeComponent', () => {
 
 
     it('should test the <H2>', () => {
-        expect(component.title).toBe('Welcome to the Movieshop!');
+        expect(component.title).toBe('Welcome to Nätflik!');
     });
 });
